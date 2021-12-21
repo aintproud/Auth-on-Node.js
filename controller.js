@@ -1,6 +1,6 @@
 const Router = require('express')
 const router = new Router()
-const controller = require('./authController')
+const controller = require('./service')
 const {check} = require('express-validator')
 
 // POST recieving, validation of sent data
