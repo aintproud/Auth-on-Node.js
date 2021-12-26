@@ -1,0 +1,20 @@
+
+version: "3.8"
+services:
+  back_app:
+    depends_on:
+      - db
+    image: express/5
+    ports:
+      - "8080:5000"
+    environment:
+      - DB_URL=mongodb://db_mongo
+  db:
+    image: mongo
+    container_name: db_mongo
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+volumes:
+  mongodata: 

@@ -9,7 +9,7 @@ app.use(express.json())
 app.use("/auth", router)
 const start = async () => {
     try {
-        await mongoose.connect('mongodb://mongo:3000/cinema')
+        await mongoose.connect(process.env.DB_URL)
         app.listen(PORT, () => console.log(`server on ${PORT}`))
     } catch (e) {
         console.log(e)

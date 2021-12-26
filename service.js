@@ -11,7 +11,7 @@ const generateAccessToken = (id, roles) => {
 }
 
 
-class authController {
+class authService {
     async registration(req,res){
         try {
             const errors = validationResult(req)
@@ -61,6 +61,6 @@ class authController {
     }
 }
 
-module.exports = new authController
+module.exports = new authService
 
 

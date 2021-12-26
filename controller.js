@@ -1,6 +1,6 @@
 const Router = require('express')
 const router = new Router()
-const controller = require('./service')
+const service = require('./service')
 const {check} = require('express-validator')
 
 // POST recieving, validation of sent data
@@ -8,7 +8,7 @@ const {check} = require('express-validator')
 router.post('/registration', [
     check('username', "Say no to gaps)").notEmpty(),
     check('password', "Password is not 3-4 length").isLength({min:3, max:4})
-], controller.registration)
-router.post('/login', controller.login)
+], service.registration)
+router.post('/login', service.login)
 
 module.exports = router
